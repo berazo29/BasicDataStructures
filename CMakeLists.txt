@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.17)
-project(linkedlist C)
+project(BasicDataStructures C)
 
-set(CMAKE_C_STANDARD 99)
+set(CMAKE_C_STANDARD 11)
 
-add_executable(linkedlist main.c)
+add_executable( BasicDataStructures main.c basicDataStructures.h linkedList.c queue.c stack.c)
+
