@@ -3,5 +3,5 @@ project(BasicDataStructures C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable( BasicDataStructures main.c basicDataStructures.h linkedList.c queue.c stack.c)
+add_executable( BasicDataStructures main.c basicDataStructures.h linkedList.c queue.c stack.c bst.c)
 

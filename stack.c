@@ -1,9 +1,13 @@
+//
+// Created by Bryan Erazo on 11/5/20.
+//
+
 #include "basicDataStructures.h"
 
-void push(struct Node** head, int data, int position ){
-    struct Node* newNode;
-    struct Node* p;
-    newNode = (struct Node*)malloc(sizeof(struct Node));
+void push(struct SimpleNode** head, int data, int position ){
+    struct SimpleNode* newNode;
+    struct SimpleNode* p;
+    newNode = (struct SimpleNode*)malloc(sizeof(struct SimpleNode));
 
     if(!newNode){
         printf("Memory Error");
@@ -19,8 +23,8 @@ void push(struct Node** head, int data, int position ){
 
 }
 
-void pop(struct Node** head, int position ){
-    struct Node* p;
+void pop(struct SimpleNode** head, int position ){
+    struct SimpleNode* p;
 
     if(head == NULL){
         printf("List Empty");

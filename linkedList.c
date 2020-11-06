@@ -1,21 +1,25 @@
+//
+// Created by Bryan Erazo on 11/5/20.
+//
+
 #include "basicDataStructures.h"
 
-struct Node* insertFirst(struct Node *head, int data){
-    struct Node *tmp = (struct Node*)malloc(sizeof(struct Node));
+struct SimpleNode* insertFirst(struct SimpleNode *head, int data){
+    struct SimpleNode *tmp = (struct SimpleNode*)malloc(sizeof(struct SimpleNode));
     tmp->data = data;
     tmp->next = head;
     return tmp;
 }
 
-void insertFirstVoid(struct Node **head, int data){
+void insertFirstVoid(struct SimpleNode **head, int data){
 
-    struct Node *newNode = (struct Node*)malloc(sizeof(struct Node));
+    struct SimpleNode *newNode = (struct SimpleNode*)malloc(sizeof(struct SimpleNode));
     newNode->data = data;
     newNode->next = *head;
     *head = newNode;
 }
 
-void printLinkedList(struct Node *head){
+void printLinkedList(struct SimpleNode *head){
     if (head == NULL){
         printf(" Empty\n");
         return;
@@ -27,9 +31,9 @@ void printLinkedList(struct Node *head){
     printf(" END\n");
 }
 
-void destroyLinkedList(struct Node **head){
-    struct Node  *next;
-    struct Node *curr;
+void freeLinkedList(struct SimpleNode **head){
+    struct SimpleNode  *next;
+    struct SimpleNode *curr;
     for (curr = *head; curr; curr = next){
         next = curr->next;
         free(curr);

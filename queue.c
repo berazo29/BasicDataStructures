@@ -1,9 +1,13 @@
+//
+// Created by Bryan Erazo on 11/5/20.
+//
+
 #include "basicDataStructures.h"
 
-void enqueue(struct Node** head, int data){
-    struct Node* newNode;
-    struct Node* p;
-    newNode = (struct Node*)malloc(sizeof(struct Node));
+void enqueue(struct SimpleNode** head, int data){
+    struct SimpleNode* newNode;
+    struct SimpleNode* p;
+    newNode = (struct SimpleNode*)malloc(sizeof(struct SimpleNode));
 
     if(!newNode){
         printf("Memory Error");
@@ -17,10 +21,10 @@ void enqueue(struct Node** head, int data){
 
 }
 
-void deleteNodeAt(struct Node** head, int position ){
+void deleteNodeAt(struct SimpleNode** head, int position ){
     int k = 1;
-    struct Node* p;
-    struct Node* q;
+    struct SimpleNode* p;
+    struct SimpleNode* q;
 
     if(head == NULL){
         printf("List Empty");
@@ -49,9 +53,9 @@ void deleteNodeAt(struct Node** head, int position ){
 
 }
 
-void dequeue( struct Node** node){
+void dequeue( struct SimpleNode** node){
 
-    struct Node* p = *node;
+    struct SimpleNode* p = *node;
     int i = 0;
     while ( p != NULL ){
         i++;

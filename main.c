@@ -7,8 +7,8 @@ int main(){
     printf("x:=%d",x);
 
 
-    struct Node *ptr0 = NULL;
-    struct Node *ptr1 = NULL;
+    struct SimpleNode *ptr0 = NULL;
+    struct SimpleNode *ptr1 = NULL;
 
     for (int i = 0; i < 10; ++i) {
         ptr0 = insertFirst(ptr0, i);
@@ -18,8 +18,8 @@ int main(){
     }
 
 
-    destroyLinkedList(&ptr0);
-    destroyLinkedList(&ptr1);
+    freeLinkedList(&ptr0);
+    freeLinkedList(&ptr1);
 
     printLinkedList(ptr0);
     printLinkedList(ptr1);
@@ -33,9 +33,18 @@ int main(){
     }
     printLinkedList(ptr0);
     printLinkedList(ptr1);
-    destroyLinkedList(&ptr0);
-    destroyLinkedList(&ptr1);
+    freeLinkedList(&ptr0);
+    freeLinkedList(&ptr1);
     printLinkedList(ptr0);
     printLinkedList(ptr1);
+
+    struct BinaryNode *tree = NULL;
+    tree = insertInBst(5, tree);
+    tree = insertInBst(1, tree);
+    tree = insertInBst(2, tree);
+
+    printSortedBst(tree);
+    freeBst(tree);
+
 
 }
